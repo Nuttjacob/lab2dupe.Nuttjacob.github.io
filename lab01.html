@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<link type="css" rel="stylesheet" src="main.css"/>
+		<style>
+		body {
+			margin: auto;
+			width: 75%;
+			font-style: "Arial", sans-serif;
+			font-size: 1.5em;
+			background-color: green;
+			text-align: center;
+			padding: 10px;
+		}
+		nav, main, header, footer {
+			background-color: white;
+			border-radius: 10px;
+			padding: 10px;
+			margin: 10px;
+		}
+		footer {
+			font-size: 0.75em;
+		}
+		main {
+			padding: 2%;
+		}
+		table {
+			font-size: 1.25em;
+			border: 1px dotted gray;
+			border-collapse: collapse;
+			
+		}
+		td, th {
+			padding: 10px;
+			border: 1px dotted gray;
+		}
+		#tabledesc {
+			font-size: 1.5em;
+			width: 100%;
+		}
+		form {
+			margin: 10px;
+			text-align: left;
+			border: 1px dotted gray;
+		}
+		input, label, textarea {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+		}
+		form p {
+			display: inline;
+		}
+		</style>
+		<script>
+		var slider;
+		var slidernum;
+		var numtext;
+		function changerating() {
+			slider = document.getElementById("rating")
+			slidernum = slider.value;
+			numtext = document.getElementById("ratenum");
+			
+			numtext.innerHTML = slidernum + "/10";
+		}
+		function thankyou() {
+			thankstext = document.getElementById("thanks");
+			thanks.innerHTML = "Thanks for your feedback!";
+		}
+		</script>
+		<title>Jacob's Advanced Web Dev Test</title>
+	</head>
+	<body>
+		<header>
+			<h1>Jacob's Reviews</h1>
+		</header>
+		<nav>
+		<a href="">About</a>
+		<a href="">Awards</a>
+		<a href="">Upcoming</a>
+		</nav>
+		<main>
+			<h1>Welcome to Jacob's Test!</h1>
+			<table>
+			<tr>
+				<th id="tabledesc" colspan="3">Movie Reviews</th>
+			</tr>
+					<tr>
+						<th>Movie</th>
+						<th>Critic Rating</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>Jacob's Adventure</td>
+						<td>7.5/10</td>
+						<td>Jacob goes on an adventure.</td>
+					</tr>
+					<tr>
+						<td>Jacob's Adventure 2</td>
+						<td>5/10</td>
+						<td>Jacob doesn't go on an adventure.</td>
+					</tr>
+					<tr>
+						<td>Jacob's Mystery</td>
+						<td>8/10</td>
+						<td>Jacob attempts to do homework</td>
+					</tr>
+					<tr>
+						<td>Jacob: A New Hope</td>
+						<td>9/10</td>
+						<td>Jacob finishes his homework.</td>
+					</tr>
+			</table>
+		<h2>Submit your own review!</h2>
+		<form>
+		
+		<label for="title">Title: </label>
+		<input type="text" id="title"/>
+		<label for="rating">Rating:</label>
+		<input type="range" min="0" max="10" id="rating" onchange="changerating()" />
+		<label for="rating" id="ratenum">5/10</label>
+		<label for="description">Description: </label>
+		<textarea rows="3" cols="50" id="description"></textarea>
+		<input type="button" value="Review"  id="subbutton" onclick="thankyou()" /><!-- I used JS just as a demo instead of PHP -->
+		<label id="thanks" for="subbutton"></label>
+		</form>
+		</main>
+		<footer>
+			<h2>Copyright Jacob Grover</h2>
+		</footer>
+	</body>
+</html>
